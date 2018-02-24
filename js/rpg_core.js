@@ -1,5 +1,5 @@
 //=============================================================================
-// rpg_core.js v1.5.1
+// rpg_core.js v1.6.0
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -180,7 +180,7 @@ Utils.RPGMAKER_NAME = 'MV';
  * @type String
  * @final
  */
-Utils.RPGMAKER_VERSION = "1.5.1";
+Utils.RPGMAKER_VERSION = "1.6.0";
 
 /**
  * Checks whether the option is in the query string.
@@ -191,7 +191,9 @@ Utils.RPGMAKER_VERSION = "1.5.1";
  * @return {Boolean} True if the option is in the query string
  */
 Utils.isOptionValid = function(name) {
-    return location.search.slice(1).split('&').contains(name);
+    if (location.search.slice(1).split('&').contains(name)) {return 1;};
+    if (typeof nw !== "undefined" && nw.App.argv.length > 0 && nw.App.argv[0].split('&').contains(name)) {return 1;};
+    return 0;
 };
 
 /**
@@ -1715,7 +1717,7 @@ function Graphics() {
     throw new Error('This is a static class');
 }
 
-Graphics._cssFontLoading =  document.fonts && document.fonts.ready;
+Graphics._cssFontLoading =  document.fonts && document.fonts.ready && document.fonts.ready.then;
 Graphics._fontLoaded = null;
 Graphics._videoVolume = 1;
 
@@ -2364,6 +2366,8 @@ Graphics._updateRealScale = function() {
     if (this._stretchEnabled) {
         var h = window.innerWidth / this._width;
         var v = window.innerHeight / this._height;
+        if (h >= 1 && h - 0.01 <= 1) h = 1;
+        if (v >= 1 && v - 0.01 <= 1) v = 1;
         this._realScale = Math.min(h, v);
     } else {
         this._realScale = this._scale;

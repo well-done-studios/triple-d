@@ -1,5 +1,5 @@
 //=============================================================================
-// rpg_managers.js v1.5.1
+// rpg_managers.js v1.6.0
 //=============================================================================
 
 //-----------------------------------------------------------------------------
@@ -1939,6 +1939,11 @@ SceneManager.onKeyDown = function(event) {
                 require('nw.gui').Window.get().showDevTools();
             }
             break;
+	case 123: //F12
+            if (Utils.isNwjs()) {
+                event.preventDefault();
+            }
+            break;
         }
     }
 };
@@ -2274,7 +2279,7 @@ BattleManager.updateEvent = function() {
                 return this.updateEventMain();
             }
     }
-    return this.checkAbort2();
+    return this.checkAbort();
 };
 
 BattleManager.updateEventMain = function() {
@@ -2622,14 +2627,6 @@ BattleManager.checkBattleEnd = function() {
 };
 
 BattleManager.checkAbort = function() {
-    if ($gameParty.isEmpty() || this.isAborting()) {
-        this.processAbort();
-        return true;
-    }
-    return false;
-};
-
-BattleManager.checkAbort2 = function() {
     if ($gameParty.isEmpty() || this.isAborting()) {
         SoundManager.playEscape();
         this._escaped = true;
