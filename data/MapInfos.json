@@ -1,9 +1,9 @@
 [
 null,
 {"id":1,"expanded":false,"name":"Cat Puzzle ","order":4,"parentId":0,"scrollX":1092,"scrollY":604},
-{"id":2,"expanded":false,"name":"Classroom","order":1,"parentId":0,"scrollX":1092,"scrollY":604},
+{"id":2,"expanded":false,"name":"Classroom","order":1,"parentId":0,"scrollX":832,"scrollY":640},
 {"id":3,"expanded":false,"name":"TA Encounter","order":5,"parentId":4,"scrollX":1092,"scrollY":604},
-{"id":4,"expanded":false,"name":"Snow Level","order":3,"parentId":0,"scrollX":1081.3333333333333,"scrollY":640},
+{"id":4,"expanded":false,"name":"Snow Level","order":3,"parentId":0,"scrollX":552,"scrollY":1053.2727272727273},
 {"id":5,"expanded":false,"name":"Hallway","order":2,"parentId":0,"scrollX":1092,"scrollY":604},
 {"id":6,"expanded":false,"name":"Bio-Sci","order":6,"parentId":0,"scrollX":832,"scrollY":640},
 {"id":7,"expanded":false,"name":"Horizontal_Hallway","order":14,"parentId":6,"scrollX":1092,"scrollY":604},
