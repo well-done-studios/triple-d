@@ -1,10 +1,5 @@
 [
 null,
-<<<<<<< Updated upstream
-{"id":1,"expanded":false,"name":"Cat Puzzle ","order":4,"parentId":0,"scrollX":832,"scrollY":640},
-{"id":2,"expanded":false,"name":"Classroom","order":1,"parentId":0,"scrollX":1092,"scrollY":604},
-{"id":3,"expanded":false,"name":"TA Encounter","order":5,"parentId":0,"scrollX":1092,"scrollY":604},
-=======
 {"id":1,"expanded":false,"name":"Cat Puzzle ","order":5,"parentId":0,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":2,"expanded":false,"name":"Classroom","order":1,"parentId":0,"scrollX":399.59999999999997,"scrollY":359.4},
 {"id":3,"expanded":false,"name":"TA Encounter","order":4,"parentId":4,"scrollX":1092,"scrollY":604},
