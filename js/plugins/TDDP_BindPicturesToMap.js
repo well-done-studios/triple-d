@@ -110,6 +110,15 @@ Imported.TDDP_BindPicturesToMap = "1.0.7";
         this.createCharacters();
         this.createPicturesLayer('above_characters', this._tilemap, 8);
         this.createShadow();
+
+
+
+        if (Imported.TerraxLighting) {  // Add these 3 lines
+            this.createLightmask();     // And make sure TerraxLighting
+        }                               // is above TDDP in the plugin-list.            
+
+        
+
         this.createPicturesLayer('below_weather', this._tilemap, 8);
         this.createWeather();
         this.createPicturesLayer('top', this);
