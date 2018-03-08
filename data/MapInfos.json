@@ -17,5 +17,5 @@ null,
 {"id":15,"expanded":false,"name":"Vertical_Hallway","order":14,"parentId":6,"scrollX":1228.5,"scrollY":679.5},
 {"id":16,"expanded":true,"name":"Room_1","order":15,"parentId":6,"scrollX":771,"scrollY":531.75},
 {"id":17,"expanded":false,"name":"Room 2","order":17,"parentId":6,"scrollX":1228.5,"scrollY":679.5},
-{"id":18,"expanded":true,"name":"Snow Level Day 2","order":18,"parentId":0,"scrollX":611.4,"scrollY":1050.6}
+{"id":18,"expanded":true,"name":"Snow Level Day 2","order":18,"parentId":0,"scrollX":611.4,"scrollY":389.4}
 ]
