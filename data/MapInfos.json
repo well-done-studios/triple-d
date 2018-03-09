@@ -19,5 +19,5 @@ null,
 {"id":17,"expanded":false,"name":"Classroom MAIN","order":5,"parentId":0,"scrollX":621,"scrollY":389.4},
 {"id":18,"expanded":true,"name":"Snow Level Day 2","order":4,"parentId":0,"scrollX":611.4,"scrollY":389.4},
 {"id":19,"expanded":false,"name":"Room_2","order":19,"parentId":6,"scrollX":1092,"scrollY":604},
-{"id":20,"expanded":false,"name":"Janitor \"Closet\"","order":20,"parentId":6,"scrollX":1092,"scrollY":637.3333333333334}
+{"id":20,"expanded":false,"name":"Janitor \"Closet\"","order":20,"parentId":6,"scrollX":621,"scrollY":389.4}
 ]
