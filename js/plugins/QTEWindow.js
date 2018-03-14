@@ -98,7 +98,7 @@
  *
  * @param OcarinaSounds
  * @desc The array of each sound name, in that order [up,down,left,right,ok,cancel]
- * @default ["OcarinaRé2","OcarinaFa","OcarinaSi","OcarinaLa","OcarinaRé","Ocarina",]
+ * @default ["ocarina1","ocarina2","ocarina3","ocarina4","ocarina5","ocarina1",]
  *
  * @param OcarinaNotePosition
  * @desc The position of each note on the music sheet [up,down,left,right,ok,cancel]
