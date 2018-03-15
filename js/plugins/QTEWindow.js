@@ -906,6 +906,49 @@ Window_QTE.prototype.playOcarina = function(endButton) {
 	}
 }
 
+Window_QTE.prototype.drawRythmOcarina = function() {
+    var width = this.width;
+    var height = 33
+    var sum = 0;
+	var currTime = this._maxDuration - this._duration
+	var max = Math.min(this._itemNumber,this._sequence.length - this.getSeqIndex());
+    for (var i = 0; i < 5; i++) {
+        this.drawHorzLine(36 + 36 * i);
+    }
+    for (var i = 0; i < this._sequence.length; i++) {
+        var x = sum - currTime;
+        if (x < currTime + width) {
+            if (this._sequence[i][0] !== "no") {
+				if (this._sequence[i][0] === "ok") {
+					var y = this._notePos[4];
+					var imgIndex = 28;
+                } else  if (this._sequence[i][0] === "up") {
+					var y = this._notePos[0];
+					var imgIndex = 12;
+                } else  if (this._sequence[i][0] === "down") {
+					var y = this._notePos[1];
+					var imgIndex = 13;
+                } else  if (this._sequence[i][0] === "right") {
+					var y = this._notePos[3];
+					var imgIndex = 15;
+                } else if (this._sequence[i][0] === "left") {
+					var y = this._notePos[2];
+					var imgIndex = 14;
+                } else {
+					var y = 0;
+					var imgIndex = 29;
+				}
+				this.drawIcon(this.getIconIndex(this._sequence[i][0]) ,x, y)
+			}
+        }
+
+        sum += this._sequence[i][1]
+	}
+	
+}
+   
+
+
 Window_QTE.prototype.drawOcarina = function() {
 	var max = Math.min(this._itemNumber,this._sequence.length - this.getSeqIndex());
 	for (var i = 0; i < 5; i++) {
@@ -926,6 +969,7 @@ Window_QTE.prototype.drawOcarina = function() {
 			var y = 0;
 		}
 		this.drawIcon(this.getIconIndex(this._sequence[i + this.getSeqIndex()]) ,48 * i, y)
+		sum += this._sequence[i][1]
 	}
 }
 
@@ -940,57 +984,6 @@ Window_QTE.prototype.lineColor = function() {
     return this.normalColor();
 };
 
-Window_QTE.prototype.drawRythmOcarina = function() {
-	var width = this.width;
-	var height = 33
-	var color1 = Utils.rgbToCssColor(188,64,64);
-	var color1Bis = Utils.rgbToCssColor(255,0,0);
-	var color2 = Utils.rgbToCssColor(64,64,188);
-	var color2Bis = Utils.rgbToCssColor(0,0,255);
-	var color, colorBis
-	var sum = 0;
-	var sum2 = this._sequence[0][1];
-	var currTime = this._maxDuration - this._duration
-	for (var i = 0; i < 5; i++) {
-		this.drawHorzLine(36 + 36 * i);
-	}
-	for (var i = 0; i < this._sequence.length; i++) {
-		var x = sum - currTime;
-		if (x < currTime + width) {
-			if (i%2 === 0) {
-				color = color1;
-				colorBis = color1Bis
-			} else {
-				color = color2
-				colorBis = color2Bis
-			};
-			if (this._sequence[i][0] !== "no") {
-				if (this._sequence[i][0] === "ok") {
-					var y = this._notePos[4];
-				} else 	if (this._sequence[i][0] === "up") {
-					var y = this._notePos[0];
-				} else	if (this._sequence[i][0] === "down") {
-					var y = this._notePos[1];
-				} else 	if (this._sequence[i][0] === "right") {
-					var y = this._notePos[3];
-				} else if (this._sequence[i][0] === "left") {
-					var y = this._notePos[2];
-				} else {
-					var y = 0;
-				}
-				this.contents.gradientFillRect(x, y, this._sequence[i][1], height, color, colorBis, false);
-				this.contents.clearRect (x + 5 , y + 5 , this._sequence[i][1] - 10 , height - 10 )
-				this.drawText(this._sequence[i][0], x, y, this._sequence[i][1], "center")
-			}
-		}
-		if (i === (this._sequence.length -1)) {
-			break;
-		}
-		sum += this._sequence[i][1]
-		sum2 += this._sequence[i+1][1]
-	}
-	
-}
 
 
 //Scene Battle Modifications to handle QTE input
@@ -1048,7 +1041,7 @@ Game_Map.prototype.QTE = function(mode,duration,sequence,visible,x,y,opacity,wid
 	if (mode[0] === "free") {
 		sequence = [];
 		qte._currInputs = 0;
-		width = mode[1];
+		width = mode[0];
 		qte._itemNumber = width;
 	}
 	if (mode[0] === "rythm") {
