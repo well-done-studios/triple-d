@@ -938,7 +938,7 @@ Window_QTE.prototype.drawRythmOcarina = function() {
 					var y = 0;
 					var imgIndex = 29;
 				}
-				this.drawIcon(this.getIconIndex(this._sequence[i][0]) ,x, y)
+				this.drawIcon(this.getIconIndex(this._sequence[i][0]) , y, x)
 			}
         }
 
@@ -976,7 +976,7 @@ Window_QTE.prototype.drawOcarina = function() {
 Window_QTE.prototype.drawHorzLine = function(y) {
     var lineY = y;
     this.contents.paintOpacity = 120;
-    this.contents.fillRect(0, lineY, this.contentsWidth(), 2, this.lineColor());
+    this.contents.fillRect(lineY, 0, 2, this.contentsHeight(), this.lineColor());
     this.contents.paintOpacity = 255;
 };
 
