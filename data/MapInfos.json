@@ -22,5 +22,6 @@ null,
 {"id":20,"expanded":false,"name":"Janitor \"Closet\"","order":20,"parentId":6,"scrollX":514,"scrollY":354.5},
 {"id":21,"expanded":false,"name":"QTE-testing","order":21,"parentId":0,"scrollX":655.2,"scrollY":362.4},
 {"id":22,"expanded":true,"name":"Snow Level Day 3","order":22,"parentId":0,"scrollX":648.8,"scrollY":1077.6},
-{"id":23,"expanded":false,"name":"Art Hallway","order":23,"parentId":22,"scrollX":648.8,"scrollY":362.4}
+{"id":23,"expanded":false,"name":"Art Hallway","order":23,"parentId":22,"scrollX":648.8,"scrollY":933.6},
+{"id":24,"expanded":false,"name":"Professor room","order":24,"parentId":22,"scrollX":655.2,"scrollY":362.4}
 ]
