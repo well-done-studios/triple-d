@@ -446,7 +446,7 @@ Window_QTE.prototype.update = function() {
 			}
 			if (this.getSeqIndex() >= this._sequence.length) {
 				this.setResult("success");
-				this.playSuccessSound();
+				// this.playSuccessSound();
 				this._ending = true;
 			};
 			if (this.getResult() === "start" && !this.checkFailure() && !wrongInput && check) {
@@ -456,7 +456,7 @@ Window_QTE.prototype.update = function() {
 				this.setResult("failure");
 			}
 			if (this.getResult() === "failure") {
-				this.playFailureSound();
+				// this.playFailureSound();
 				this.displayFailure();
 				/*this.hide();
 				this._frozen = true;*/
@@ -465,7 +465,7 @@ Window_QTE.prototype.update = function() {
 			if (this.getResult() === "success") {
 				/*this.hide();
 				this._frozen = true;*/
-				this.playSuccessSound();
+				// this.playSuccessSound();
 				this._ending = true;
 			}
 		}
@@ -484,12 +484,12 @@ Window_QTE.prototype.update = function() {
 			var endButton = this._mode[2];
 			if (this._currInputs >= maxInputs) {
 				//finished inputting, > max inputs
-				this.playSuccessSound();
+				// this.playSuccessSound();
 				this.endFreeQTE();
 			}
 			if (Input.isTriggered(endButton)) {
 				//player presses the finish button
-				this.playSuccessSound();
+				// this.playSuccessSound();
 				this.endFreeQTE();
 			}
 			if (this.checkInput(endButton) !== 0 && !this._ending) {
@@ -505,7 +505,7 @@ Window_QTE.prototype.update = function() {
 				this.setResult("failure");
 			}
 			if (this.getResult() === "failure") {
-				this.playFailureSound();
+				// this.playFailureSound();
 				this.displayFailure();
 				//this.hide();
 				//this._frozen = true;
@@ -908,37 +908,51 @@ Window_QTE.prototype.playOcarina = function(endButton) {
 
 Window_QTE.prototype.drawRythmOcarina = function() {
     var width = this.width;
-    var height = 33
+    var height = 33;
     var sum = 0;
 	var currTime = this._maxDuration - this._duration
 	var max = Math.min(this._itemNumber,this._sequence.length - this.getSeqIndex());
+	var color1 = Utils.rgbToCssColor(188,64,64);
+	var color1Bis = Utils.rgbToCssColor(255,0,0);
+	var color2 = Utils.rgbToCssColor(64,64,188);
+	var color2Bis = Utils.rgbToCssColor(0,0,255);
+	var color, colorBis
     for (var i = 0; i < 5; i++) {
-        this.drawHorzLine(36 + 36 * i);
-    }
+        this.drawVertLine(36 + 36 * i);
+	}
+	this.drawHorzLine(135);
     for (var i = 0; i < this._sequence.length; i++) {
-        var x = sum - currTime;
-        if (x < currTime + width) {
+        var y = currTime - sum + 70;
+        if (y < currTime + width) {
+			if (i%2 === 0) {
+				color = color1;
+				colorBis = color1Bis
+			} else {
+				color = color2
+				colorBis = color2Bis
+			};
             if (this._sequence[i][0] !== "no") {
 				if (this._sequence[i][0] === "ok") {
-					var y = this._notePos[4];
+					var x = this._notePos[4];
 					var imgIndex = 28;
                 } else  if (this._sequence[i][0] === "up") {
-					var y = this._notePos[0];
+					var x = this._notePos[0];
 					var imgIndex = 12;
                 } else  if (this._sequence[i][0] === "down") {
-					var y = this._notePos[1];
+					var x = this._notePos[1];
 					var imgIndex = 13;
                 } else  if (this._sequence[i][0] === "right") {
-					var y = this._notePos[3];
+					var x = this._notePos[3];
 					var imgIndex = 15;
                 } else if (this._sequence[i][0] === "left") {
-					var y = this._notePos[2];
+					var x = this._notePos[2];
 					var imgIndex = 14;
                 } else {
-					var y = 0;
+					var x = 0;
 					var imgIndex = 29;
 				}
-				this.drawIcon(this.getIconIndex(this._sequence[i][0]) , y, x)
+				
+				this.drawIcon(this.getIconIndex(this._sequence[i][0]) , x, y);
 			}
         }
 
@@ -968,22 +982,30 @@ Window_QTE.prototype.drawOcarina = function() {
 		} else {
 			var y = 0;
 		}
-		this.drawIcon(this.getIconIndex(this._sequence[i + this.getSeqIndex()]) ,48 * i, y)
-		sum += this._sequence[i][1]
+		this.drawIcon(this.getIconIndex(this._sequence[i + this.getSeqIndex()]) , i*48, y)
+		// sum += this._sequence[i][1]
 	}
 }
 
 Window_QTE.prototype.drawHorzLine = function(y) {
     var lineY = y;
     this.contents.paintOpacity = 120;
-    this.contents.fillRect(lineY, 0, 2, this.contentsHeight(), this.lineColor());
+    this.contents.fillRect(0, lineY, this.contentsHeight(), 4, Utils.rgbToCssColor(255,0,0));
     this.contents.paintOpacity = 255;
 };
+
+Window_QTE.prototype.drawVertLine = function(y) {
+	var lineY = y;
+    this.contents.paintOpacity = 120;
+    this.contents.fillRect(lineY, 0, 2, this.contentsHeight(), this.lineColor());
+	this.contents.paintOpacity = 255;
+};
+
 
 Window_QTE.prototype.lineColor = function() {
     return this.normalColor();
 };
-
+	
 
 
 //Scene Battle Modifications to handle QTE input
