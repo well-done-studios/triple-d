@@ -1,7 +1,7 @@
 [
 null,
 {"id":1,"expanded":false,"name":"Cat Puzzle ","order":4,"parentId":2,"scrollX":728,"scrollY":402.6666666666667},
-{"id":2,"expanded":true,"name":"Classroom","order":1,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
+{"id":2,"expanded":false,"name":"Classroom","order":1,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
 {"id":3,"expanded":true,"name":"TA Encounter","order":5,"parentId":2,"scrollX":655.2,"scrollY":362.4},
 {"id":4,"expanded":true,"name":"Snow Level","order":3,"parentId":2,"scrollX":720.8888888888889,"scrollY":402.6666666666667},
 {"id":5,"expanded":false,"name":"Hallway","order":2,"parentId":2,"scrollX":728,"scrollY":402.6666666666667},
@@ -16,12 +16,13 @@ null,
 {"id":14,"expanded":false,"name":"Right_T_Junction","order":12,"parentId":6,"scrollX":720.8888888888889,"scrollY":557.3333333333334},
 {"id":15,"expanded":false,"name":"Vertical_Hallway","order":15,"parentId":6,"scrollX":655.2,"scrollY":362.4},
 {"id":16,"expanded":true,"name":"Room_1","order":17,"parentId":6,"scrollX":655.2,"scrollY":362.4},
-{"id":17,"expanded":false,"name":"Classroom MAIN","order":24,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
+{"id":17,"expanded":false,"name":"Classroom MAIN","order":25,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
 {"id":18,"expanded":false,"name":"Snow Level Day 2","order":6,"parentId":0,"scrollX":720.8888888888889,"scrollY":402.6666666666667},
 {"id":19,"expanded":false,"name":"Room_2","order":18,"parentId":6,"scrollX":832,"scrollY":640},
 {"id":20,"expanded":false,"name":"Janitor \"Closet\"","order":19,"parentId":6,"scrollX":728,"scrollY":402.6666666666667},
-{"id":21,"expanded":false,"name":"QTE-testing","order":23,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
+{"id":21,"expanded":false,"name":"QTE-testing","order":24,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
 {"id":22,"expanded":true,"name":"Snow Level Day 3","order":20,"parentId":0,"scrollX":720.8888888888889,"scrollY":602.6666666666666},
-{"id":23,"expanded":false,"name":"Art Hallway","order":21,"parentId":22,"scrollX":720.8888888888889,"scrollY":893.3333333333334},
-{"id":24,"expanded":false,"name":"Professor room","order":22,"parentId":22,"scrollX":728,"scrollY":402.6666666666667}
+{"id":23,"expanded":true,"name":"Art Hallway","order":21,"parentId":22,"scrollX":720.8888888888889,"scrollY":402.6666666666667},
+{"id":24,"expanded":false,"name":"Professor room","order":22,"parentId":22,"scrollX":728,"scrollY":402.6666666666667},
+{"id":25,"expanded":false,"name":"Cat Room","order":23,"parentId":22,"scrollX":728,"scrollY":402.6666666666667}
 ]
