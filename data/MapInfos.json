@@ -22,7 +22,7 @@ null,
 {"id":20,"expanded":false,"name":"Janitor \"Closet\"","order":19,"parentId":6,"scrollX":728,"scrollY":402.6666666666667},
 {"id":21,"expanded":false,"name":"QTE-testing","order":24,"parentId":0,"scrollX":728,"scrollY":402.6666666666667},
 {"id":22,"expanded":true,"name":"Snow Level Day 3","order":20,"parentId":0,"scrollX":720.8888888888889,"scrollY":602.6666666666666},
-{"id":23,"expanded":true,"name":"Art Hallway","order":21,"parentId":22,"scrollX":720.8888888888889,"scrollY":402.6666666666667},
+{"id":23,"expanded":true,"name":"Art Hallway","order":21,"parentId":22,"scrollX":506,"scrollY":774.5},
 {"id":24,"expanded":false,"name":"Professor room","order":22,"parentId":22,"scrollX":728,"scrollY":402.6666666666667},
 {"id":25,"expanded":false,"name":"Cat Room","order":23,"parentId":22,"scrollX":728,"scrollY":402.6666666666667}
 ]
