@@ -2,7 +2,7 @@
 null,
 {"id":1,"expanded":false,"name":"Cat Puzzle ","order":4,"parentId":2,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":2,"expanded":true,"name":"Classroom","order":1,"parentId":0,"scrollX":1092,"scrollY":637.3333333333334},
-{"id":3,"expanded":true,"name":"TA Encounter","order":5,"parentId":2,"scrollX":621,"scrollY":389.4},
+{"id":3,"expanded":true,"name":"TA Encounter","order":5,"parentId":2,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":4,"expanded":true,"name":"Snow Level","order":3,"parentId":2,"scrollX":1081.3333333333333,"scrollY":637.3333333333334},
 {"id":5,"expanded":false,"name":"Hallway","order":2,"parentId":2,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":6,"expanded":true,"name":"Bio-Sci","order":7,"parentId":18,"scrollX":1092,"scrollY":637.3333333333334},
