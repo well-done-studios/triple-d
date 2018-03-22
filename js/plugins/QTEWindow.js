@@ -62,7 +62,7 @@
  *
  * @param CanFail
  * @desc Whether or not the player can make wrong inputs. If false, a wrong input will end the QTE as a failure.
- * @default false
+ * @default true
  *
  * @param ShowTime
  * @desc Show The remaining time or not, can be: gauge, number, both or no
@@ -540,11 +540,11 @@ Window_QTE.prototype.update = function() {
 				}
 			}
 			if (this.getResult() === "start" && !this.checkFailure() && !wrongInput) {
-				this.setResult("failure");
+				this.setResult("success");
 			}
-			if (index > this.getSeqIndex()) { //If player missed a note, the sequence index will be < to the expected index
-				this.setResult("failure");
-			}
+			// if (index > this.getSeqIndex()) { //If player missed a note, the sequence index will be < to the expected index
+			// 	this.setResult("failure");
+			// }
 			if (this.getSeqIndex() >= this._sequence.length) { //If end music reached
 				this.setResult("success")
 			}
@@ -552,7 +552,7 @@ Window_QTE.prototype.update = function() {
 				this.setResult("failure");
 			}
 			if (this.getResult() === "failure") {
-				this.playFailureSound();
+				// this.playFailureSound();
 				this.displayFailure();
 				/*this.hide();
 				this._frozen = true;*/
@@ -673,25 +673,25 @@ Window_QTE.prototype.getIconIndex = function(string) {
 
 Window_QTE.prototype.checkFailure = function() {
 	if (Input.isTriggered("up") && this._currentB !== "up") {
-		return false
+		return true
 	} else if (Input.isTriggered("down") && this._currentB !== "down") {
-		return false
+		return true
 	} else if (Input.isTriggered("left") && this._currentB !== "left") {
-		return false
+		return true
 	} else if (Input.isTriggered("right") && this._currentB !== "right") {
-		return false
+		return true
 	} else if (Input.isTriggered("ok") && this._currentB !== "ok") {
-		return false
+		return true
 	} else if ((Input.isTriggered("cancel") || Input.isTriggered("escape")) && this._currentB !== "cancel") {
-		return false
+		return true
 	} else if (Input.isTriggered("shift") && this._currentB !== "shift") {
-		return false
+		return true
 	} else if (Input.isTriggered("menu") && this._currentB !== "menu") {
-		return false
+		return true
 	} else if (Input.isTriggered("pageup") && this._currentB !== "pageup") {
-		return false
+		return true
 	} else if (Input.isTriggered("pagedown") && this._currentB !== "pagedown") {
-		return false
+		return true
 	} else {
 		return true
 	}
