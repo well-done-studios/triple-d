@@ -966,7 +966,7 @@ Window_QTE.prototype.drawRythmOcarina = function() {
 Window_QTE.prototype.drawOcarina = function() {
 	var max = Math.min(this._itemNumber,this._sequence.length - this.getSeqIndex());
 	for (var i = 0; i < 5; i++) {
-		this.drawHorzLine(36 + 36 * i);
+		this.drawHorzLine(21 + 36 * i);
 	}
 	for (var i = 0; i < max; i++) {
 		if (this._sequence[i+this.getSeqIndex()] === "ok") {
