@@ -990,7 +990,7 @@ Window_QTE.prototype.drawOcarina = function() {
 Window_QTE.prototype.drawHorzLine = function(y) {
     var lineY = y;
     this.contents.paintOpacity = 120;
-    this.contents.fillRect(0, lineY, this.contentsHeight(), 4, Utils.rgbToCssColor(255,0,0));
+    this.contents.fillRect(0, lineY, this.contentsHeight(), 16, Utils.rgbToCssColor(255,0,0));
     this.contents.paintOpacity = 255;
 };
 
