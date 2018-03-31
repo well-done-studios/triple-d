@@ -26,5 +26,6 @@ null,
 {"id":24,"expanded":false,"name":"Professor room","order":24,"parentId":22,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":25,"expanded":false,"name":"Cat Room","order":25,"parentId":22,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":26,"expanded":false,"name":"Collection Area","order":21,"parentId":6,"scrollX":1092,"scrollY":637.3333333333334},
-{"id":27,"expanded":false,"name":"Classroom_End","order":27,"parentId":0,"scrollX":1092,"scrollY":637.3333333333334}
+{"id":27,"expanded":false,"name":"Classroom_End","order":27,"parentId":0,"scrollX":832,"scrollY":640},
+{"id":28,"expanded":false,"name":"credits","order":28,"parentId":0,"scrollX":1092,"scrollY":637.3333333333334}
 ]

@@ -1,0 +1,51 @@
+DEBBIE'S DOG DILEMMA
+By Well-Done Studios
+
+
+-CREDITS-
+
+
+-Executive Producer-	
+Alex Patterson
+
+-Producer-		
+Jolene Poulin
+
+-Programmers-		
+Hugh Bagan			
+Logan Yue
+Jolene Poulin
+
+-Writing- 		
+Atharv Vohra
+
+-Art-			
+Adanna Onuekwusi
+
+-Sound and Music-		
+Jolene Poulin
+Atharv Vohra
+with Sundus Mahdi and Laura Wakeman
+
+-Lead Design-		
+Atharv Vohra
+
+-Plugins-			
+Yanfly
+SRD
+QPlugins
+Terrax
+Galv
+
+A special thanks to all our beta testers, 
+our professor Vadim and all the amazing people
+at BioWare and at the University of Alberta 
+for their guidance and support.
+
+
+THANKS FOR PLAYING!
+
+
+
+And Stay Frosty!
+
