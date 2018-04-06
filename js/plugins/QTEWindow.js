@@ -416,7 +416,7 @@ Window_QTE.prototype.update = function() {
 				} else {
 					this.drawOcarina();
 				}
-				this.drawTime(showTime);
+				// this.drawTime(showTime);
 				this._endDur -= 1;
 			}
 			if (this._endDur <= 0) {
@@ -434,7 +434,7 @@ Window_QTE.prototype.update = function() {
 			}
 			this.setCurrentB();
 			this.setDuration(-1);
-			this.drawTime(showTime);
+			// this.drawTime(showTime);
 			var check = true;
 			if (Input.isTriggered(this._currentB)) {
 				if (this._currentB === "cancel") {check = false}
@@ -479,7 +479,7 @@ Window_QTE.prototype.update = function() {
 			this.setCurrentB();
 			this._seqIndex = 0;
 			this.setDuration(-1);
-			this.drawTime(showTime);
+			// this.drawTime(showTime);
 			var maxInputs = this._mode[1];
 			var endButton = this._mode[2];
 			if (this._currInputs >= maxInputs) {
@@ -521,7 +521,7 @@ Window_QTE.prototype.update = function() {
 			} else {
 				this.drawRythmOcarina();
 			}
-			this.drawTime(showTime);
+			// this.drawTime(showTime);
 			this._currentB = this.getRythmCurrInput();
 			var index = this.getRythmIndex()
 			if (!this._inputs[index] && this._sequence[index][0] === "no") { //for a waiting period
