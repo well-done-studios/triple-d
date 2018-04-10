@@ -25,7 +25,7 @@ null,
 {"id":23,"expanded":true,"name":"Art Hallway","order":23,"parentId":22,"scrollX":640.8,"scrollY":389.4},
 {"id":24,"expanded":false,"name":"Professor room","order":25,"parentId":22,"scrollX":650.4,"scrollY":389.4},
 {"id":25,"expanded":false,"name":"Cat Room","order":24,"parentId":22,"scrollX":650.4,"scrollY":389.4},
-{"id":26,"expanded":false,"name":"Collection Area","order":21,"parentId":6,"scrollX":799.1999999999999,"scrollY":568.1999999999999},
+{"id":26,"expanded":false,"name":"Collection Area","order":21,"parentId":6,"scrollX":1092,"scrollY":637.3333333333334},
 {"id":27,"expanded":false,"name":"Classroom_End","order":27,"parentId":0,"scrollX":832,"scrollY":640},
 {"id":28,"expanded":false,"name":"credits","order":28,"parentId":0,"scrollX":771,"scrollY":531.75}
 ]
