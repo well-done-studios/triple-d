@@ -397,6 +397,8 @@ Window_QTE.prototype.initialize = function(duration) {
 	this._notePos = eval(parameters.OcarinaNotePosition)
 	this._endDur = eval(parameters.EndingDuration)
 	this._ending = false;
+	var color = Utils.rgbToCssColor(255,255,255);
+	var margin = 1;
     this.update();
 }
 
@@ -449,15 +451,16 @@ Window_QTE.prototype.update = function() {
 				// this.playSuccessSound();
 				this._ending = true;
 			};
-			if (this.getResult() === "start" && !this.checkFailure() && !wrongInput && check) {
-				this.setResult("failure");
-			}
-			if (this._duration <= 0 && this.getResult() === "start") {
-				this.setResult("failure");
-			}
+			// if (this.getResult() === "start" && !this.checkFailure() && !wrongInput && check) {
+			// 	this.setResult("failure");
+			// }
+			// if (this._duration <= 0 && this.getResult() === "start") {
+			// 	this.setResult("failure");
+			// }
 			if (this.getResult() === "failure") {
-				// this.playFailureSound();
+				this.playFailureSound();
 				this.displayFailure();
+				this.setResult("success");
 				/*this.hide();
 				this._frozen = true;*/
 				this._ending = true;
@@ -505,7 +508,7 @@ Window_QTE.prototype.update = function() {
 				this.setResult("failure");
 			}
 			if (this.getResult() === "failure") {
-				// this.playFailureSound();
+				this.playFailureSound();
 				this.displayFailure();
 				//this.hide();
 				//this._frozen = true;
@@ -542,9 +545,13 @@ Window_QTE.prototype.update = function() {
 			if (this.getResult() === "start" && !this.checkFailure() && !wrongInput) {
 				this.setResult("success");
 			}
-			// if (index > this.getSeqIndex()) { //If player missed a note, the sequence index will be < to the expected index
-			// 	this.setResult("failure");
-			// }
+			if (index == this.getSeqIndex() + this.margin) { //If player missed a note, the sequence index will be < to the expected index
+				this.color = Utils.rgbToCssColor(255,255,0);
+				this.margin += 1;
+				setTimeout(function() {
+					this.color = Utils.rgbToCssColor(0,0,0);
+				}, 100);
+			} 
 			if (this.getSeqIndex() >= this._sequence.length) { //If end music reached
 				this.setResult("success")
 			}
@@ -552,7 +559,7 @@ Window_QTE.prototype.update = function() {
 				this.setResult("failure");
 			}
 			if (this.getResult() === "failure") {
-				// this.playFailureSound();
+				this.playFailureSound();
 				this.displayFailure();
 				/*this.hide();
 				this._frozen = true;*/
@@ -604,6 +611,8 @@ Window_QTE.prototype.playInput = function() {
 	if (filename !== "0" && this._sound) {
 		AudioManager.playSe(sound);
 	}
+	this.color = Utils.rgbToCssColor(0,255,0);
+
 }
 
 Window_QTE.prototype.playSuccessSound = function() {
@@ -616,6 +625,8 @@ Window_QTE.prototype.playSuccessSound = function() {
 	if (filename !== "0" && this._sound) {
 		AudioManager.playSe(sound);
 	}
+	
+
 }
 
 Window_QTE.prototype.playFailureSound = function() {
@@ -628,6 +639,7 @@ Window_QTE.prototype.playFailureSound = function() {
 	if (filename !== "0" && this._sound) {
 		AudioManager.playSe(sound);
 	}
+	this.color = Utils.rgbToCssColor(255,0,0);
 }
 
 Window_QTE.prototype.drawSequence = function() {
@@ -990,7 +1002,7 @@ Window_QTE.prototype.drawOcarina = function() {
 Window_QTE.prototype.drawHorzLine = function(y) {
     var lineY = y;
     this.contents.paintOpacity = 120;
-    this.contents.fillRect(0, lineY, this.contentsHeight(), 16, Utils.rgbToCssColor(255,0,0));
+    this.contents.fillRect(0, lineY, this.contentsHeight(), 16, this.color);
     this.contents.paintOpacity = 255;
 };
 
@@ -1339,5 +1351,6 @@ Window_BattleLog.prototype.displayNoMatch = function(target) {
 		this.push('addText', failText);
 	}
 }
+
 
 //End
