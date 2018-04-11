@@ -1,9 +1,9 @@
 //=============================================================================
-// CustomMenuScene.js
+// PhoneMenu.js
 //=============================================================================
 
 /*:
- * @plugindesc eyy bb lemme slide right into ur dms
+ * @plugindesc This plugin sets the custom cell phone menu.
  * @author Hugh Bagan
  *
  * @help There are no plugin commands.
@@ -28,9 +28,9 @@
         */
         this._goldWindow.hide();
         this._statusWindow.hide();
-        this._commandWindow.x = 295;
+        this._commandWindow.x = 290;
         this._commandWindow.y = 90;
-        this._commandWindow.width = 250;
+        this._commandWindow.width = 260;
         this._commandWindow.height = 450;
         this._commandWindow.opacity = 255;
     };
